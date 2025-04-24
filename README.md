@@ -10,9 +10,9 @@ The prototype enables:
 - Export of the entire session as a `.doc` file
 
 This system has been developed as part of an academic investigation, code files are structured to support direct review and experimentation.
-!(screenshot0.png)
-!(screenshot1.png)
-!(screenshot2.png)
+![](screenshot0.png)
+![](screenshot1.png)
+![](screenshot2.png)
 
 # There are two ways to experience the prototype
 ### Option 1： Go directly to **www.co-teleological.space**；
