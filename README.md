@@ -4,7 +4,7 @@ This is a research prototype designed to explore **Co-Teleological Interaction**
 
 The prototype enables:
 - Simple and easy-to-use interface；
-- Generation of **multiple AI responses per user input**, each following a distinct tone or perspective；
+- Generation of **multiple AI responses per user input** by using GPT-4, each following a distinct tone or perspective；
 - Iterative and reflective interactions via a **multi-branch conversation interface**；
 - A **"Journey" panel** that visualizes the dialogue tree and key decision points；
 - **Summary generation** of all branches for sense-making；
