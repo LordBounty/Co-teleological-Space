@@ -1,6 +1,6 @@
 # Co-Teleological Interaction Prototype
 
-This is a research prototype designed to explore **Co-Teleological Interaction** — a paradigm where humans and AI collaboratively define, reflect on, and evolve goals over time. 
+This is a research prototype designed to explore **Co-Teleological Interaction** — a paradigm where humans and AI collaboratively define, reflect on, and evolve goals over time. More on this study at: [add paper link future] 
 The prototype enables:
 - Simple and easy-to-use interface；
 - Generation of **multiple AI responses per user input**, each following a distinct tone or perspective；
