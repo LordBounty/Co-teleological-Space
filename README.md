@@ -20,14 +20,17 @@ This system has been developed as part of an academic investigation, code files 
 
 ### 1. Make sure all files are ready
 Files list:
-    project-root/
-    ├── static/             
-    │   ├── script.js
-    │   ├── styles.css
-    │   └── other image assets
-    ├── templates/
-    │   └── index.html
-    ├── server.py    
+```
+project-root/
+├── static/
+│   ├── script.js
+│   ├── styles.css
+│   └── other image assets
+├── templates/
+│   └── index.html
+└── server.py
+```
+   
 
 ### 2. Set up the Environment
 Configuration in the terminal：
