@@ -13,8 +13,8 @@ This system has been developed as part of an academic investigation, code files 
 
 
 # There are two ways to experience the prototype
-## 1. Go directly to **www.co-teleological.space**
-## 2. Deploy/run it locally
+### Option 1： Go directly to **www.co-teleological.space**；
+### Option 2： Deploy/run it locally；
 
 ## How to deploy/Run Locally
 
