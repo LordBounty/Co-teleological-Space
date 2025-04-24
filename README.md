@@ -46,15 +46,22 @@ project-root/
 
 ### 2. Set up the Environment
 Configuration in the terminal：
-
+```
 python -m venv venv
 source venv/bin/activate  # On Windows: venv\Scripts\activate
 pip install flask openai
+```
 
 ### 3. Set the API Key
-In **server.py**, set your OpenAI API key: eg. openai.api_key = 'sk-xxxxx'
+In **server.py**, set your OpenAI API key: eg. 
+```
+openai.api_key = 'sk-xxxxx'
+```
 
 ### 4. Run the Application
-In terminal:  python server.py
+In terminal: 
+```
+python server.py
+```
 Then open a browser and go to http://127.0.0.1:5000 (localhost)
 
