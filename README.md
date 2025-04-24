@@ -12,9 +12,14 @@ The prototype enables:
 This system has been developed as part of an academic investigation, code files are structured to support direct review and experimentation.
 
 
-<img src="screenshot0.png" width="600">
-<img src="screenshot1.png" width="600">
-<img src="screenshot2.png" width="600">
+<p align="center">
+  <img src="screenshot0.png" width="45%" style="margin-right: 10px;">
+  <img src="screenshot1.png" width="45%">
+</p>
+
+<p align="center">
+  <img src="screenshot2.png" width="60%">
+</p>
 
 
 # There are two ways to experience the prototype
