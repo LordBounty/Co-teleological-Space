@@ -2,12 +2,13 @@
 
 This is a research prototype designed to explore **Co-Teleological Interaction** — a paradigm where humans and AI collaboratively define, reflect on, and evolve goals over time. 
 The prototype enables:
-- Generation of **multiple AI responses per user input**, each following a distinct tone or perspective
-- Iterative and reflective interactions via a **multi-branch conversation interface**
-- A **"Journey" panel** that visualizes the dialogue tree and key decision points
-- **Summary generation** of all branches for sense-making
-- **Image generation** using DALL·E
-- Export of the entire session as a `.doc` file
+- Simple and easy-to-use interface；
+- Generation of **multiple AI responses per user input**, each following a distinct tone or perspective；
+- Iterative and reflective interactions via a **multi-branch conversation interface**；
+- A **"Journey" panel** that visualizes the dialogue tree and key decision points；
+- **Summary generation** of all branches for sense-making；
+- **Image generation** using DALL·E；
+- Export of the entire session as a `.doc` file；
 
 This system has been developed as part of an academic investigation, code files are structured to support direct review and experimentation.
 
