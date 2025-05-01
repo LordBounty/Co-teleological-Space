@@ -1,0 +1,453 @@
+/* ------------------
+   Basic page & container styles
+------------------- */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f7f9fb;
+  font-family: sans-serif;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90%;
+  max-width: 1200px;
+  margin: 80px auto 20px auto;
+  position: relative;
+  transition: transform 0.5s ease;
+}
+
+.viewport {
+  width: 100%;
+  min-height: calc(100vh - 60px); /* subtract navbar height */
+  overflow: auto;
+  position: relative;
+  cursor: grab;
+}
+
+/* ------------------
+   Navigation bar styles
+------------------- */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  background-color: #f7f9fb;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  z-index: 1000;
+}
+.nav-left {
+  color: black;
+  font-weight: bold;
+  font-size: 1.2em;
+}
+.nav-right {
+  display: flex;
+  gap: 10px;
+  margin-right: 20px;
+}
+.nav-button {
+  background-color: #f7f9fb;
+  color: black;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-size: 1rem;
+  border-radius: 5px;
+  font-weight: bold
+}
+.nav-button:hover {
+  background-color: black;
+  color: #f7f9fb;
+  font-weight: bold
+}
+
+/* ------------------
+   Floating container style (shown when root unit prompt is out of screen)
+------------------- */
+/* Fixed below the navbar, centered horizontally; default display: none */
+#floating-rootprompt {
+  position: fixed;
+  top: 60px; /* navbar height 60px, just below */
+  left: 50%; 
+  transform: translateX(-50%);
+  background-color: #ecedf2;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 10px 15px;
+  font-size: 1.2rem;
+  display: none;
+  z-index: 2000;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+/* ------------------
+   Interactive unit styles
+------------------- */
+.interactive-unit {
+  margin: 10px;
+  padding: 10px;
+  border: none; 
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: fadeIn 0.5s ease-in-out;
+  background-color: var(--bg-color, #ecedf2);
+}
+
+/* Make .input-row horizontal */
+.input-row {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+}
+
+/* Adjust button/image size if needed */
+.input-row button img {
+  width: 20px;
+  height: 20px;
+}
+
+/* ------------------
+   Root unit styles
+------------------- */
+/* Visually relax root unit padding if desired */
+.interactive-unit[data-index=""] {
+  padding: 20px;
+}
+
+/* Root input box size adjustments */
+.root-input-row .root-input {
+  width: 600px;
+  height: 56px;
+  font-size: 1.2rem;
+}
+
+.interactive-unit[data-index=""] > .response {
+  min-height: 0px;
+}
+
+/* Root input row container */
+.root-input-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+/* Root run button styles */
+.root-run-button {
+  cursor: pointer;
+  width: 60px; 
+  height: 60px;
+}
+
+.root-run-button:hover{
+  background-color: lightgreen;
+}
+
+.root-run-button img {
+  width: 45px;
+  height: 45px;
+}
+
+/* Run/Generate buttons group */
+.button-group {
+  display: flex;
+  gap: 10px;
+  margin-top: 5px;
+}
+
+.button {
+  margin-top: 5px;
+  cursor: pointer;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+.button:hover {
+  background-color: rgb(34, 149, 34);
+  color: white;
+}
+.generate-button:hover {
+  background-color: #2196F3; 
+  color: #fff;
+}
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Assistant response display area */
+.response {
+  margin-top: 10px;
+  color: black;
+  min-height: 50px; 
+  width: 90%;
+  max-width: 300px;
+  padding: 5px;
+  border-radius: 8px;
+}
+
+/* ------------------
+   Animations
+------------------- */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ------------------
+   Modal windows
+------------------- */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.6);
+}
+.modal-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  padding: 10px;
+  border-radius: 8px;
+  max-width: 90%;
+  max-height: 90%;
+  overflow: auto;
+}
+.modal-close {
+  font-size: 1.5em;
+  font-weight: bold;
+  cursor: pointer;
+  display: inline-block;
+  margin: 5px;
+}
+.modal-close:hover {
+  color: #888;
+}
+
+/* ------------------
+   Bottom black transparent container
+   + fade-out animation
+------------------- */
+.bottom-info {
+  position: absolute;
+  bottom: 30px;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 0 10px;
+
+  /* Default visible */
+  opacity: 1;
+  transition: opacity 0.8s ease-out;
+}
+
+/* Add .hidden to fade out */
+.bottom-info.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.info-box {
+  background-color: rgba(0,0,0,0.7);
+  color: white;
+  border-radius: 15px;
+  width: 30%;
+  min-height: 80px;
+  padding: 20px;
+  margin: 0 10px;
+  box-sizing: border-box;
+}
+.info-box h3 {
+  margin-top: 0;
+}
+
+/* ------------------
+   Media query (optional)
+------------------- */
+@media (max-width: 480px) {
+  .nav-button {
+    font-size: 0.9rem;
+    padding: 0.4rem 0.8rem;
+  }
+  .nav-left {
+    font-size: 1rem;
+  }
+  .response {
+    max-width: 90%;
+  }
+}
+
+/* ------------------
+   Collapse button basic style
+------------------- */
+.collapse-btn {
+  width: 18px;
+  height: 18px;
+  background-color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  position: absolute;
+  top: 1px;
+  right: 2px;
+  padding: 0;
+  outline: none;
+}
+
+/* Use ::before to draw upward triangle */
+.collapse-btn::before {
+  content: "";
+  display: block;
+  margin: 6px auto;
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 7px solid #000;
+}
+
+/* Hover: background gray, triangle white */
+.collapse-btn:hover {
+  background-color: #ccc;
+}
+.collapse-btn:hover::before {
+  border-top-color: #fff;
+}
+
+/* Collapsed state: downward triangle */
+.collapse-btn.collapsed::before {
+  border-top: none;
+  border-bottom: 7px solid #000;
+}
+
+/* Collapsed + hover: white downward triangle */
+.collapse-btn.collapsed:hover::before {
+  border-bottom-color: #fff;
+}
+
+/* ========== Journey sidebar base styles ========== */
+.journey-panel {
+  position: fixed;
+  top: 60px;
+  left: 0; 
+  width: 300px;
+  height: calc(100vh - 60px);
+  background-color: #ffffff;
+  border-right: 1px solid #ddd;
+  overflow-y: auto;
+  transform: translateX(-310px);
+  transition: transform 0.3s ease;
+  z-index: 1500;
+  box-shadow: 2px 0 8px rgba(0,0,0,0.2);
+}
+
+.journey-panel.open {
+  transform: translateX(0);
+}
+
+.journey-panel-content {
+  padding: 15px;
+}
+
+.journey-panel-content h3 {
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+  font-weight: bold;
+}
+
+.journey-panel-content .message-item {
+  margin: 4px 0;
+  line-height: 1.4em;
+}
+
+.journey-panel-content .message-user {
+  color: #333;
+}
+.journey-panel-content .message-assistant {
+  color: #0077cc;
+  margin-left: 10px;
+}
+
+/* Highlighted unit outline example */
+.highlighted-unit {
+  outline: 3px solid #FF5722;
+  box-shadow: 0 0 10px rgba(255, 87, 34, 0.5);
+}
+
+/* Highlighted title in Journey panel */
+.highlighted-title {
+  color: #FF5722;
+  font-weight: bold;
+}
+
+/* ========= Journey button styles ========= */
+/* Fix button group to upper right */
+#journey-btn-group {
+  position: fixed;
+  top: 70px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 2001;
+}
+
+/* Unified button style in group */
+#journey-btn-group button {
+  background-color: #fff;
+  border: none;
+  cursor: pointer;
+  padding: 5px 8px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  transition: background-color 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Image size for journey button */
+#journey-btn-group button img {
+  width: 24px;
+  height: 24px;
+  display: block;
+}
+
+/* Hover effect */
+#journey-btn-group button:hover {
+  box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+/* Toggled state for journey toggle button */
+#journey-toggle-btn.toggled {
+  background-color: #ccc;
+}
+
+/*======titles========*/
+.journey-unit-title{
+  text-decoration: underline;
+}
+
+.unit-title{
+  text-decoration: underline;
+}
